@@ -34,7 +34,7 @@
 #pragma - Zooming and Panning
 
 -(void)setupPanningAndZoomingImage {
-    self.imageView.image = self.image;
+    self.imageView.image = self.detailImage;
     [self.detailScrollView addSubview:self.imageView];
     
     self.detailScrollView.contentSize = self.imageView.bounds.size;
@@ -49,9 +49,9 @@
     return self.imageView;
 }
 
-//- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view {
-//    
-//}
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view {
+    
+}
 
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView
 withView:(UIView *)view

@@ -15,7 +15,7 @@
 @property (nonatomic, strong) UITapGestureRecognizer *tapGesture;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) UIImage *lighthouseImage;
 @end
 
 @implementation ViewController
@@ -28,21 +28,26 @@
     CGFloat scrollViewWidth = CGRectGetWidth(self.view.frame);
     CGFloat scrollViewHeight = CGRectGetHeight(self.scrollView.frame);
     
-    for (UIImage *image in self.images) {
-        UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+    for (UIImage *lighthouseImage in self.images) {
+        UIImageView *iPhoneImagesView = [[UIImageView alloc]initWithImage:lighthouseImage];
         
-        imageView.frame = CGRectMake(imageXPosition, 0, scrollViewWidth, scrollViewHeight);
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        iPhoneImagesView.frame = CGRectMake(imageXPosition, 0, scrollViewWidth, scrollViewHeight);
+        iPhoneImagesView.contentMode = UIViewContentModeScaleAspectFit;
         
-        [self.scrollView addSubview:imageView];
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGestureTapped:)];
+        [iPhoneImagesView addGestureRecognizer:tapGesture];
+        iPhoneImagesView.userInteractionEnabled = YES;
+        
+        [self.scrollView addSubview:iPhoneImagesView];
         imageXPosition += scrollViewWidth;
-        
-        self.tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapped:)];
-        [imageView addGestureRecognizer:self.tapGesture];
-        imageView.userInteractionEnabled = YES;
+
     }
     self.scrollView.contentSize = CGSizeMake(scrollViewWidth*self.images.count, scrollViewHeight);
      self.scrollView.delegate = self;
+}
+
+- (void)tapGestureTapped:(UITapGestureRecognizer *)gestureRecognizer {
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,17 +60,17 @@
 }
 
 
-- (void)tapped:(UITapGestureRecognizer *)tapGesture{
-    UIImageView * imageView = (UIImageView *)tapGesture.view;
-    if ([imageView isKindOfClass:[UIImageView class]]) {
-        [self performSegueWithIdentifier:@"showDetail" sender:self.iPhoneImagesView.image];
-    }
+- (void)setTapGesture:(UITapGestureRecognizer *)sender{
+    UIImageView * showImage = (UIImageView *)sender.view;
+    //if ([imageView isKindOfClass:[UIImageView class]]) {
+        [self performSegueWithIdentifier:@"showDetail" sender:showImage.image];
+    //}
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         DetailViewController *dvc = [segue destinationViewController];
-        dvc.image = sender;
+        dvc.detailImage = sender;
     }
 }
 
