@@ -47,7 +47,10 @@
 }
 
 - (void)tapGestureTapped:(UITapGestureRecognizer *)gestureRecognizer {
+    UIImageView *showImage = (UIImageView *)gestureRecognizer.view;
     
+    [self performSegueWithIdentifier:@"showDetail" sender:showImage.image];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,12 +63,11 @@
 }
 
 
-- (void)setTapGesture:(UITapGestureRecognizer *)sender{
-    UIImageView * showImage = (UIImageView *)sender.view;
+//- (void)setTapGesture:(UITapGestureRecognizer *)sender{
+//    UIImageView * showImage = (UIImageView *)sender.view;
     //if ([imageView isKindOfClass:[UIImageView class]]) {
-        [self performSegueWithIdentifier:@"showDetail" sender:showImage.image];
     //}
-}
+//}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
