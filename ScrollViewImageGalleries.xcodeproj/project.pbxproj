@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D28F75C1DDA606D00FF0873 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D28F75B1DDA606D00FF0873 /* DetailViewController.m */; };
 		2DBC338F1DDA4218009238F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC338E1DDA4218009238F9 /* main.m */; };
 		2DBC33921DDA4218009238F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC33911DDA4218009238F9 /* AppDelegate.m */; };
 		2DBC33951DDA4218009238F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC33941DDA4218009238F9 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D28F75A1DDA606D00FF0873 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		2D28F75B1DDA606D00FF0873 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		2DBC338A1DDA4218009238F9 /* ScrollViewImageGalleries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollViewImageGalleries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DBC338E1DDA4218009238F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DBC33901DDA4218009238F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 				2DBC33931DDA4218009238F9 /* ViewController.h */,
 				2DBC33941DDA4218009238F9 /* ViewController.m */,
 				2DBC33961DDA4218009238F9 /* Main.storyboard */,
+				2D28F75A1DDA606D00FF0873 /* DetailViewController.h */,
+				2D28F75B1DDA606D00FF0873 /* DetailViewController.m */,
 				2DBC33991DDA4218009238F9 /* Assets.xcassets */,
 				2DBC339B1DDA4218009238F9 /* LaunchScreen.storyboard */,
 				2DBC339E1DDA4218009238F9 /* Info.plist */,
@@ -152,6 +157,7 @@
 				2DBC33951DDA4218009238F9 /* ViewController.m in Sources */,
 				2DBC33921DDA4218009238F9 /* AppDelegate.m in Sources */,
 				2DBC338F1DDA4218009238F9 /* main.m in Sources */,
+				2D28F75C1DDA606D00FF0873 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +306,7 @@
 				2DBC33A31DDA4218009238F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

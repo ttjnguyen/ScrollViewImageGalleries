@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DetailViewController.h
 //  ScrollViewImageGalleries
 //
 //  Created by Jenny Nguyen on 2016-11-14.
@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController  <UIScrollViewDelegate>
+@interface DetailViewController : UIViewController <UIScrollViewDelegate>
 
-
+@property (nonatomic) UIImage *image;
 
 @end
-
